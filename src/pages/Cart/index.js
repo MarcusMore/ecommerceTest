@@ -8,14 +8,14 @@ import {bindActionCreators} from 'redux'
 
 //import {Container} from '.styles';
 
-function Cart ({cart, removeFromCart, updateAmount}){
-  function increment(product){
-    updateAmount(product.id, product.amout + 1);
-  }
+function Cart ({cart, removeFromCart}){
+  // function increment(product){
+  //   updateAmount(product.id, product.amout + 1);
+  // }
 
-  function decrement(product){
-    updateAmount(product.id, product.amount - 1)
-  }
+  // function decrement(product){
+  //   updateAmount(product.id, product.amount - 1)
+  // }
 
     return (
       <ProductCart>

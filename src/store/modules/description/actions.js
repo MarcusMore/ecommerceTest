@@ -1,6 +1,6 @@
-export function DescriptionActions(product){
+export function addDescription(product){
   return{
-    type: 'GO_TO_PRODUCT_DESCRIPTION',
+    type: 'ADD_DESCRIPTION',
       product,
   }
 }

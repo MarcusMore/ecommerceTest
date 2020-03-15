@@ -8,7 +8,7 @@ import {bindActionCreators} from 'redux'
 
 //import {Container} from '.styles';
 
-function Description ({cart, removeFromCart}){
+function Description ({description}){
   
 
     return (
@@ -23,16 +23,12 @@ function Description ({cart, removeFromCart}){
             </p>
           </Link>
         
-          <h4 className="ml-5 pl-5">Shopping Cart</h4>
-           <p className="ml-5 pl-5 pb-3">
-            x Items
-           </p>
-        {cart.map(product => (      
+        {description.map(product => (      
           <div className="row">
-            <div className="col pt-5">
-              <img className="pl-5 ml-5" style={{height: '150px'}} src={product.images[0].url} alt={product.name}/>
+            <div className="col">
+              <img className="pl-5 ml-5" style={{height: '300px'}} src={product.images[0].url} alt={product.name}/>
             </div>
-            <div className="col-6 mr-5 pr-5">
+            <div className="col-6 mr-5 pr-5 mr-5">
               <p>{product.name}</p>
               <p>{product.description}</p>
             </div>
@@ -48,7 +44,7 @@ function Description ({cart, removeFromCart}){
 }
 
 const mapStateToProps = state => ({
-  cart: state.cart,
+  description: state.description,
 });
 
 const mapDispatchToProps = dispatch =>

@@ -27,9 +27,9 @@ class Home extends Component {
   }
 
   handleDetails = product => {
-    const { productDescription } = this.props;
+    const { addDescription } = this.props;
 
-    productDescription(product)
+    addDescription(product)
   }
 
   render() {
@@ -59,7 +59,7 @@ class Home extends Component {
                           <p className="card-title">{product.name}</p>
                         </div>
                         <Link to="/description">
-                          <p onClick={() => this.handleAddProduct(product)} className="pl-3">View</p>
+                          <p onClick={() => this.handleDetails(product)} className="pl-3">View</p>
                         </Link>
                             
                     </div>
@@ -75,10 +75,10 @@ class Home extends Component {
 
 
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(CartActions, dispatch);
+// const mapDispatchToProps = dispatch =>
+//   bindActionCreators(CartActions, dispatch);
 
-  // const mapDispatchToProps = dispatch =>
-  // bindActionCreators(productDescription, dispatch);
+  const mapDispatchToProps = dispatch =>
+  bindActionCreators(DescriptionActions, dispatch);
 
 export default connect(null, mapDispatchToProps)(Home);
