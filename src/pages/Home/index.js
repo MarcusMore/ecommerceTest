@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import api from '../../services/api'
 import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import {Link} from 'react-router-dom';
 
 import {ProductList, CardsContainer} from './styles'
 
+import * as CartActions from '../../store/modules/cart/actions'
+import * as DescriptionActions from '../../store/modules/description/actions'
 
 class Home extends Component {
   state = {
@@ -17,12 +21,15 @@ class Home extends Component {
   }
 
   handleAddProduct = product => {
-    const { dispatch } = this.props;
+    const { addToCart } = this.props;
 
-    dispatch({
-      type: 'ADD_TO_CART',
-      product,
-    })
+   addToCart(product)
+  }
+
+  handleDetails = product => {
+    const { productDescription } = this.props;
+
+    productDescription(product)
   }
 
   render() {
@@ -51,7 +58,10 @@ class Home extends Component {
                         <div className="card-body">
                           <p className="card-title">{product.name}</p>
                         </div>
-                          <p onClick={() => this.handleAddProduct(product)} className="pl-3">View</p>  
+                        <Link to="/description">
+                          <p onClick={() => this.handleAddProduct(product)} className="pl-3">View</p>
+                        </Link>
+                            
                     </div>
                   </div>
                 </div>
@@ -63,4 +73,12 @@ class Home extends Component {
   }
 }
 
-export default connect()(Home);
+
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(CartActions, dispatch);
+
+  // const mapDispatchToProps = dispatch =>
+  // bindActionCreators(productDescription, dispatch);
+
+export default connect(null, mapDispatchToProps)(Home);

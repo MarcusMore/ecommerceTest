@@ -3,10 +3,20 @@ import {connect} from 'react-redux';
 import {ProductCart} from './styles'
 import {Link} from 'react-router-dom';
 import {Home} from './../Home'
+import * as CartActions from '../../store/modules/cart/actions'
+import {bindActionCreators} from 'redux'
 
 //import {Container} from '.styles';
 
-function Cart ({cart, dispatch}){
+function Cart ({cart, removeFromCart, updateAmount}){
+  function increment(product){
+    updateAmount(product.id, product.amout + 1);
+  }
+
+  function decrement(product){
+    updateAmount(product.id, product.amount - 1)
+  }
+
     return (
       <ProductCart>
         <div className="container-fluid pt-5">
@@ -37,11 +47,14 @@ function Cart ({cart, dispatch}){
               </tr>
               <tr>
                 <td className="pr-2"><input type="text" value="N/a"/>  </td>
-                <td className="pr-2"><input type="number" value={product.amount}/></td>
+                <td className="pr-2"><input type="text" value={product.amount}/></td>
                 <td className="pr-2"><input type="date"/></td>
               </tr>
             </div>
-            <p onClick={() => dispatch ({type: 'REMOVE_FROM_CART', id: product.id})}>Remove</p>
+            <div className="col mr-5 pr-5">
+            <p className="pr-5" onClick={() => removeFromCart (product.id)}>Remove</p>
+            </div>
+            
 
           </div>
         
@@ -56,5 +69,8 @@ const mapStateToProps = state => ({
   cart: state.cart,
 });
 
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(CartActions, dispatch);
 
-export default connect(mapStateToProps)(Cart);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);
