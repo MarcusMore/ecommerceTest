@@ -20,4 +20,14 @@ export default createGlobalStyle`
     cursor:pointer;
   }
 
+ul{
+ width:5em
+}
+
+li{
+ display:inline;
+ list-style-type:none;
+}
+
 `
+

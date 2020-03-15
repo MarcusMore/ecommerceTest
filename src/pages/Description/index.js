@@ -5,6 +5,8 @@ import {Link} from 'react-router-dom';
 import {Home} from './../Home'
 import * as DescriptionActions from '../../store/modules/description/actions'
 import {bindActionCreators} from 'redux'
+import * as CartActions from '../../store/modules/cart/actions'
+import {handleAddProduct} from './../Home'
 
 //import {Container} from '.styles';
 
@@ -25,16 +27,19 @@ function Description ({description}){
         
         {description.map(product => (      
           <div className="row">
+            
             <div className="col">
-              <img className="pl-5 ml-5" style={{height: '300px'}} src={product.images[0].url} alt={product.name}/>
+              <img style={{height: '300px'}} src={product.images[0].url} alt={product.name}/>
             </div>
-            <div className="col-6 mr-5 pr-5 mr-5">
-              <p>{product.name}</p>
+            <div className="col-6">
+              <p >{product.name}</p>
               <p>{product.description}</p>
             </div>
-            <div className="col mr-5 pr-5">
+            <div className="col">
+              <p>aaaaaaaaaaa</p>
             </div>
           </div>
+
         
       ))}
       </div>
@@ -45,10 +50,11 @@ function Description ({description}){
 
 const mapStateToProps = state => ({
   description: state.description,
+  cart: state.cart
 });
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators(DescriptionActions, dispatch);
+  bindActionCreators(CartActions, DescriptionActions, dispatch);
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Description);

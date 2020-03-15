@@ -20,11 +20,11 @@ class Home extends Component {
     this.setState({products: reponse.data});
   }
 
-  handleAddProduct = product => {
-    const { addToCart } = this.props;
+  // handleAddProduct = product => {
+  //   const { addToCart } = this.props;
 
-   addToCart(product)
-  }
+  //  addToCart(product)
+  // }
 
   handleDetails = product => {
     const { addDescription } = this.props;
