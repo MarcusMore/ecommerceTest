@@ -12,7 +12,7 @@ function Header({cartSize}) {
           <div className="container-fluid">
             <div className="row">
               <div className="col">
-                <p className="pt-3">E-commerce test</p>
+                <p className="pt-3 pl-3">E-commerce test</p>
               </div>
             </div>
             <div className="row">
@@ -21,9 +21,15 @@ function Header({cartSize}) {
                   <div className="pt-3 d-inline-flex">
                     <div className="header-icon icon-wrap">
                       <i className="fas fa-shopping-cart"/>
+                      
                     </div>
-                    <p className="pl-1">Cart</p>
-                    <span><br/>{cartSize} itens</span>
+                  
+                    <p className="pr-1">
+                      Cart<br/>
+                      <span class=" badge badge-light">{cartSize} itens</span>
+                    </p>
+                    
+                  
                   </div>
                 </Link>
               </div>

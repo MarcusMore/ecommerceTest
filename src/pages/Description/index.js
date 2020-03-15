@@ -6,12 +6,12 @@ import {Home} from './../Home'
 import * as DescriptionActions from '../../store/modules/description/actions'
 import {bindActionCreators} from 'redux'
 import * as CartActions from '../../store/modules/cart/actions'
-import {handleAddProduct} from './../Home'
+import handleAddProduct from './../Home/index'
 
 //import {Container} from '.styles';
 
 function Description ({description}){
-  
+
 
     return (
       <ProductDescription>
@@ -26,18 +26,27 @@ function Description ({description}){
           </Link>
         
         {description.map(product => (      
-          <div className="row">
+          <div className="row pb-5">
+              <div className="col">
+                <img style={{height: '300px'}} src={product.images[0].url} alt={product.name}/>
+              </div>
+              <div className="col-6">
+                <p >{product.name}</p>
+                <p>{product.description}</p>
+              </div>
+              <div className="col">
+              <div className="card">
+                <div className="card-body">
+                  <p>This product can be shipped worldwide</p>
+                  <p>Quantity
+                    <input style={{width:"75%"}} type="text"/>
+                  </p>
+                  <p className="pt-1">Add products to the shopping cart to request a quotation. If you need a product in a different color or size, add it separately</p>
+                  <button onClick={() => handleAddProduct(product)} type="button" className="btn btn-primary">Add to Cart</button>
+                </div>
+              </div>
+            </div>
             
-            <div className="col">
-              <img style={{height: '300px'}} src={product.images[0].url} alt={product.name}/>
-            </div>
-            <div className="col-6">
-              <p >{product.name}</p>
-              <p>{product.description}</p>
-            </div>
-            <div className="col">
-              <p>aaaaaaaaaaa</p>
-            </div>
           </div>
 
         

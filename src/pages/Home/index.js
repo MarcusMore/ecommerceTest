@@ -20,10 +20,19 @@ class Home extends Component {
     this.setState({products: reponse.data});
   }
 
-  // handleAddProduct = product => {
-  //   const { addToCart } = this.props;
+  handleAddProduct = product => {
+    const { addToCart } = this.props;
 
-  //  addToCart(product)
+   addToCart(product)
+  }
+
+  // handleAddProduct = product => {
+  //   const { dispatch } = this.props;
+
+  //  dispatch({
+  //    type: 'ADD_TO_CART',
+  //    product
+  //  })
   // }
 
   handleDetails = product => {
@@ -35,7 +44,7 @@ class Home extends Component {
   render() {
     const {products} = this.state;
     return (
-            <ProductList className="container">
+            <ProductList style={{backgroundColor:'white'}}>
                <section className="first-section">
                   <div className="row">
                     <div className="col col-lg-2">
@@ -50,22 +59,25 @@ class Home extends Component {
                   </div> 
                 <hr></hr>
               </section>
-              {products.map(product => (
-                <div key={product.id}>
-                  <div className="col-sm-12 col-lg-3 pt-5 pb-5">
-                    <div className="card">
-                        <img src={product.images[0].url} alt={product.name} className="card-img-top"/>
-                        <div className="card-body">
-                          <p className="card-title">{product.name}</p>
-                        </div>
-                        <Link to="/description">
-                          <p onClick={() => this.handleDetails(product)} className="pl-3">View</p>
-                        </Link>
-                            
+              <div className="container content-row">
+                <div className="row">
+                  {products.map(product => (
+                    <div key={product.id} className="col-sm-12 col-lg-3 pt-5 pb-5">
+                      <div className="card h-100">
+                          <img src={product.images[0].url} alt={product.name} className="card-img-top"/>
+                          <div className="card-body">
+                            <p className="card-title">{product.name}</p>
+                          </div>
+                          <Link to="/description">
+                            <p onClick={() => this.handleDetails(product)} className="pl-3">View</p>
+                          </Link>
+                              
+                      </div>
                     </div>
-                  </div>
+                ))}
                 </div>
-              ))}
+              </div>
+              
            </ProductList>
 
 
