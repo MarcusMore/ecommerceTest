@@ -23,7 +23,7 @@ function Cart({ cart, removeFromCart }) {
         <Link to="/description">
           <p className="ml-5 pl-5">
             <span className="pr-2">
-              <i class="fas fa-arrow-left"></i>
+              <i className="fas fa-arrow-left"></i>
             </span>
               Back
             </p>
@@ -31,14 +31,13 @@ function Cart({ cart, removeFromCart }) {
 
         <h2 className="ml-5 pl-5 ibm-h2">Shopping Cart</h2>
         <p className="ml-5 pl-5 pb-3">
-          x Items
            </p>
         {cart.map(product => (
           <div className="row">
             <div className="col pt-5">
               <img className="pl-5 ml-5" style={{ height: '150px' }} src={product.images[0].url} alt={product.name} />
             </div>
-            <div className="col-6 mr-5 pr-5">
+            <div className="col-6 mr-5 pr-5 pt-5">
               <p>{product.name}</p>
               <tr>
                 <th>Size</th>
@@ -51,15 +50,36 @@ function Cart({ cart, removeFromCart }) {
                 <td className="pr-2"><input type="date" /></td>
               </tr>
             </div>
-            <div className="col mr-5 pr-5">
+            <div className="col mr-5 pr-5 pt-5">
               <p className="pr-5" onClick={() => removeFromCart(product.id)}>Remove</p>
             </div>
-
-
           </div>
-
         ))}
-      </div>
+          <div className="row pb-5 pr-5">
+            <div className="col"></div>
+            <div className="col"></div>
+            <div className="col">
+                  <div className="card">
+                    <div className="card-body">
+                      <p>
+                        <Link to='#'>
+                          <button type="button" className="btn btn-primary">Place order</button>
+                        </Link>
+                      </p>
+                      <p>
+                        <Link to="/">
+                          <button type="button" className="btn btn-outline-primary">Continue Shopping</button>
+                        </Link>
+                      </p>
+
+                      
+                      <p className="pt-1">By placing your order, you agree to <a href="#">the IBM purchase policies</a> and
+                      <a href="#"> IBM's personal information policies</a></p>
+                    </div>
+                  </div>
+                </div>
+          </div>
+        </div>
     </ProductCart>
 
   );

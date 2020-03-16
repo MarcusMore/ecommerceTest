@@ -26,7 +26,7 @@ function Header({cartSize}) {
                   
                     <p className="pr-1">
                       Cart<br/>
-                      <span class=" badge badge-light">{cartSize} itens</span>
+                      <span className=" badge badge-light">{cartSize} itens</span>
                     </p>
                     
                   
