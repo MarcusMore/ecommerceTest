@@ -63,12 +63,12 @@ function Cart({ cart, removeFromCart }) {
                     <div className="card-body">
                       <p>
                         <Link to='#'>
-                          <button type="button" className="btn btn-primary">Place order</button>
+                          <button style={{width:"100%"}} type="button" className="btn btn-primary"><span className="float-left">Place order</span></button>
                         </Link>
                       </p>
                       <p>
                         <Link to="/">
-                          <button type="button" className="btn btn-outline-primary">Continue Shopping</button>
+                          <button style={{width:"100%"}} type="button" className="btn btn-outline-primary"><span className="float-left">Continue Shopping</span></button>
                         </Link>
                       </p>
 
