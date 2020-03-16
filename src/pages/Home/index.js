@@ -51,7 +51,7 @@ class Home extends Component {
               <img style={{ height: '150px' }} className="pt-5 pl-5" src="https://media-exp1.licdn.com/dms/image/C4E0BAQGYz0LG6dS9ig/company-logo_200_200/0?e=2159024400&v=beta&t=JIvhB-vDVbhJKMFK9UtSar0qae2p9nHmQ_bu3WoVdQk" />
             </div>
             <div className="col">
-              <h3 className="pt-5">E-commerce test</h3>
+              <h3 className="pt-5 ibm-h2">E-commerce test</h3>
               <p>The easiest way to shop with IBM merchandise Items. Simply to choose what you want and we'll
               work with vendors to have your order delivered as soon as possible.
                       </p>
