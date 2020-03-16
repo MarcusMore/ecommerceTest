@@ -19,8 +19,8 @@ function Cart({ cart, removeFromCart }) {
 
   return (
     <ProductCart>
-      <div className="container-fluid pt-5">
-        <Link>
+      <div styleclassName="container-fluid pt-5">
+        <Link to="/description">
           <p className="ml-5 pl-5">
             <span className="pr-2">
               <i class="fas fa-arrow-left"></i>
@@ -29,7 +29,7 @@ function Cart({ cart, removeFromCart }) {
             </p>
         </Link>
 
-        <h4 className="ml-5 pl-5">Shopping Cart</h4>
+        <h2 className="ml-5 pl-5 ibm-h2">Shopping Cart</h2>
         <p className="ml-5 pl-5 pb-3">
           x Items
            </p>

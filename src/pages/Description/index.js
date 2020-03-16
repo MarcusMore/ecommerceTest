@@ -25,10 +25,10 @@ function Description({ description }) {
 
   }
   return (
-    <ProductDescription>
-      <div className="container-fluid pt-5">
+    <ProductDescription style={{backgroundColor: 'white'}}>
+      <div style={{backgroundColor: 'white'}} className="container-fluid pt-5">
         <Link to="/">
-          <p className="ml-5 pl-5">
+          <p >
             <span className="pr-2">
               <i class="fas fa-arrow-left"></i>
             </span>
@@ -49,7 +49,7 @@ function Description({ description }) {
               <div className="card">
                 <div className="card-body">
                   <p>This product can be shipped worldwide</p>
-                  <p>Quantity
+                  <p>Quantity <br/>
                     <input style={{ width: "75%" }} type="text" />
                   </p>
                   <p className="pt-1">Add products to the shopping cart to request a quotation. If you need a product in a different color or size, add it separately</p>

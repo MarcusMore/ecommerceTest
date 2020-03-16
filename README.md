@@ -4,7 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-## `json-server server.json -p 3333 -w`
+
+## `npm install json-server -g`
+
+### `json-server server.json -p 3333 -w`
 
 Runs json-server to start the API's server
 

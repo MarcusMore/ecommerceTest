@@ -6,6 +6,9 @@ import React from 'react';
 
 export default createGlobalStyle`
 
+*{
+  background-color: #fff!important;
+}
 
   body{
     background: #fff;
